@@ -1,0 +1,21 @@
+@import "tailwindcss";
+*{
+    
+   
+    scroll-behavior: smooth;
+    
+}
+
+  @font-face {
+    font-family: "zentry";
+    src: url("/fonts/zentry-regular.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "general";
+    src: url("/fonts/general.woff2") format("woff2");
+  }
+
+.hero-heading {
+    font-family: "zentry";
+  }
+
