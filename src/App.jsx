@@ -9,7 +9,7 @@ import TiltedCard from "./components/TiltedCard.jsx";
 import ModernNavbar from "./components/ModernNavbar.jsx";
 import Particles from "./components/Particles.jsx";
 
-const PROFILE_IMAGE = "./porfile.png";
+const PROFILE_IMAGE = "./porfile.jpg";
 const CV_URL = "./Cv.pdf";
 
 export default function Portfolio() {
