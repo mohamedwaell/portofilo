@@ -1,7 +1,4 @@
-
-
 import ModelViewer from "./components/ModelViewer.jsx";
-
 import TargetCursor from "./components/TargetCursor.jsx";
 import TextType from "./components/TextType.jsx";
 import TiltedCard from "./components/TiltedCard.jsx";
@@ -17,7 +14,7 @@ export default function Portfolio() {
 
   return (
     <div className="relative min-h-screen bg-[#060010] text-white font-sans">
-      <TargetCursor targetSelector=".cursor-target" />
+      <TargetCursor targetSelector=".cursor-target" className="hide-mobile"  />
 
       <div
         style={{
