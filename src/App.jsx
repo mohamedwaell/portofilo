@@ -14,7 +14,7 @@ export default function Portfolio() {
 
   return (
     <div className="relative min-h-screen bg-[#060010] text-white font-sans">
-      <TargetCursor targetSelector=".cursor-target" className="hide-mobile"  />
+      <TargetCursor targetSelector=".cursor-target"    />
 
       <div
         style={{
