@@ -32,14 +32,14 @@ function Model({ url, scale = 1, rotation = [0, 0, 0], castShadow = true, receiv
   )
 }
 
-// Loader
-// function Loader() {
-//   return (
-//     <Html center>
-//       <div className="bg-white/90 text-sm rounded-md p-3 shadow-lg">Loading 3D model...</div>
-//     </Html>
-//   )
-// }
+Loader
+function Loader() {
+  return (
+    <Html center>
+      <div className="bg-white/90 text-sm rounded-md p-3 shadow-lg">Loading 3D model...</div>
+    </Html>
+  )
+}
 
 export default function ModelViewer({
   modelUrl,
