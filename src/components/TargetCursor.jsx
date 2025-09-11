@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback, useMemo } from 'react';
+import { useEffect, useRef, useCallback, useMemo, useState } from 'react';
 import { gsap } from 'gsap';
 
 const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hideDefaultCursor = true }) => {
@@ -6,6 +6,7 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
   const cornersRef = useRef(null);
   const spinTl = useRef(null);
   const dotRef = useRef(null);
+  const [enabled, setEnabled] = useState(false);
   const constants = useMemo(
     () => ({
       borderWidth: 3,
@@ -14,6 +15,19 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
     }),
     []
   );
+
+  useEffect(() => {
+    const checkEnabled = () => {
+      const isCoarse = typeof window !== 'undefined' && window.matchMedia ? window.matchMedia('(pointer: coarse)').matches : false;
+      const isSmallViewport = typeof window !== 'undefined' ? window.innerWidth < 768 : false;
+      setEnabled(!isCoarse && !isSmallViewport);
+    };
+    checkEnabled();
+    window.addEventListener('resize', checkEnabled);
+    return () => {
+      window.removeEventListener('resize', checkEnabled);
+    };
+  }, []);
 
   const moveCursor = useCallback((x, y) => {
     if (!cursorRef.current) return;
@@ -26,7 +40,7 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
   }, []);
 
   useEffect(() => {
-    if (!cursorRef.current) return;
+    if (!enabled || !cursorRef.current) return;
 
     const originalCursor = document.body.style.cursor;
     if (hideDefaultCursor) {
@@ -302,10 +316,10 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
       spinTl.current?.kill();
       document.body.style.cursor = originalCursor;
     };
-  }, [targetSelector, spinDuration, moveCursor, constants, hideDefaultCursor]);
+  }, [targetSelector, spinDuration, moveCursor, constants, hideDefaultCursor, enabled]);
 
   useEffect(() => {
-    if (!cursorRef.current || !spinTl.current) return;
+    if (!enabled || !cursorRef.current || !spinTl.current) return;
 
     if (spinTl.current.isActive()) {
       spinTl.current.kill();
@@ -313,7 +327,9 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
         .timeline({ repeat: -1 })
         .to(cursorRef.current, { rotation: '+=360', duration: spinDuration, ease: 'none' });
     }
-  }, [spinDuration]);
+  }, [spinDuration, enabled]);
+
+  if (!enabled) return null;
 
   return (
     <div

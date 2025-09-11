@@ -43,7 +43,7 @@ export default function Portfolio() {
         <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-opacity-50" />
       </div>
     <div className="relative min-h-screen bg-[#060010] text-white font-sans">
-      <TargetCursor targetSelector=".cursor-target" className='hidden md:block'   />
+      <TargetCursor targetSelector=".cursor-target" />
       <WhatsAppButton />
       <div
         style={{
