@@ -1,6 +1,6 @@
 import React, { Suspense, useRef, useEffect, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, useGLTF, Html, Preload } from '@react-three/drei'
+import { OrbitControls, useGLTF, Preload } from '@react-three/drei'
 
 // ModelLoader component
 function Model({ url, scale = 1, rotation = [0, 0, 0], castShadow = true, receiveShadow = true, autoRotateSpeed = 0.5 }) {
@@ -32,14 +32,7 @@ function Model({ url, scale = 1, rotation = [0, 0, 0], castShadow = true, receiv
   )
 }
 
-// Loader
-function Loader() {
-  return (
-    <Html center>
-      <div className="bg-white/90 text-sm rounded-md p-3 shadow-lg">Loading 3D model...</div>
-    </Html>
-  )
-}
+// Loader removed per request
 
 export default function ModelViewer({
   modelUrl,
@@ -83,7 +76,7 @@ export default function ModelViewer({
         <directionalLight position={[5, 10, 7]} intensity={0.8} castShadow />
         <hemisphereLight skyColor={'#ffffff'} groundColor={'#444444'} intensity={0.3} />
 
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={null}>
           <group position={[0, -0.9, 0]}>
             <Model
               url={modelUrl}
