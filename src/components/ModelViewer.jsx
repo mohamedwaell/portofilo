@@ -1,8 +1,8 @@
-import React, { Suspense, useRef } from 'react'
+import React, { Suspense, useRef, useEffect, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, useGLTF, Html, Preload } from '@react-three/drei'
 
-// ModelLoader component: loads a GLTF/GLB model and applies simple controls
+// ModelLoader component
 function Model({ url, scale = 1, rotation = [0, 0, 0], castShadow = true, receiveShadow = true, autoRotateSpeed = 0.5 }) {
   const { scene } = useGLTF(url)
   const ref = useRef()
@@ -14,7 +14,7 @@ function Model({ url, scale = 1, rotation = [0, 0, 0], castShadow = true, receiv
     }
   }, [rotation])
 
-  // small auto-rotate
+  // auto-rotate
   useFrame((state, delta) => {
     if (ref.current && autoRotateSpeed) {
       ref.current.rotation.y += autoRotateSpeed * delta * 0.1
@@ -32,7 +32,7 @@ function Model({ url, scale = 1, rotation = [0, 0, 0], castShadow = true, receiv
   )
 }
 
-// Simple fallback loader
+// Loader
 function Loader() {
   return (
     <Html center>
@@ -53,6 +53,16 @@ export default function ModelViewer({
   cameraPosition = [0, 1.5, 4],
   controls = {},
 }) {
+  const [isMobile, setIsMobile] = useState(false)
+
+  // Detect mobile screen
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
   if (!modelUrl) {
     return (
       <div className="p-4 border rounded-md text-center text-sm text-red-600">
@@ -68,7 +78,7 @@ export default function ModelViewer({
         camera={{ position: cameraPosition, fov: 45 }}
         style={{ background }}
       >
-        {/* Basic lighting setup */}
+        {/* Lighting */}
         <ambientLight intensity={0.6} />
         <directionalLight position={[5, 10, 7]} intensity={0.8} castShadow />
         <hemisphereLight skyColor={'#ffffff'} groundColor={'#444444'} intensity={0.3} />
@@ -83,7 +93,7 @@ export default function ModelViewer({
             />
           </group>
 
-          {/* optional ground shadow */}
+          {/* Shadow ground */}
           <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.01, 0]} receiveShadow>
             <planeGeometry args={[20, 20]} />
             <shadowMaterial opacity={0.2} />
@@ -92,22 +102,15 @@ export default function ModelViewer({
           <Preload all />
         </Suspense>
 
+        {/* OrbitControls with mobile restriction */}
         <OrbitControls
-          enablePan={true}
-          enableZoom={true}
-          enableRotate={true}
+          enablePan={!isMobile}
+          enableZoom={!isMobile}
+          enableRotate={!isMobile} // 🔹 disables rotation on mobile
           makeDefault
           {...controls}
         />
       </Canvas>
-
-      {/* small overlay UI example (Tailwind) */}
-      <div className="absolute left-3 top-3 z-20">
-       
-      </div>
     </div>
   )
 }
-
-
-
