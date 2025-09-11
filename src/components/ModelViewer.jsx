@@ -32,14 +32,7 @@ function Model({ url, scale = 1, rotation = [0, 0, 0], castShadow = true, receiv
   )
 }
 
-Loader
-function Loader() {
-  return (
-    <Html center>
-      <div className="bg-white/90 text-sm rounded-md p-3 shadow-lg">Loading 3D model...</div>
-    </Html>
-  )
-}
+// Loader removed (no fallback UI)
 
 export default function ModelViewer({
   modelUrl,
@@ -71,11 +64,17 @@ export default function ModelViewer({
     )
   }
 
+  const computedHeight = isMobile ? '50vh' : height
+  const computedScale = isMobile ? scale * 0.9 : scale
+
   return (
-    <div className="model-viewer-wrapper" style={{ width, height, position: 'relative' }}>
+    <div className="model-viewer-wrapper" style={{ width, height: computedHeight, position: 'relative' }}>
       <Canvas
         shadows
         camera={{ position: cameraPosition, fov: 45 }}
+        dpr={[1, 2]}
+        gl={{ antialias: !isMobile, powerPreference: 'high-performance' }}
+        frameloop={autoRotate ? 'always' : 'demand'}
         style={{ background }}
       >
         {/* Lighting */}
@@ -87,7 +86,7 @@ export default function ModelViewer({
           <group position={[0, -0.9, 0]}>
             <Model
               url={modelUrl}
-              scale={scale}
+              scale={computedScale}
               rotation={initialRotation}
               autoRotateSpeed={autoRotate ? autoRotateSpeed : 0}
             />

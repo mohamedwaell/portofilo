@@ -70,10 +70,11 @@ export default function Portfolio() {
 
       <div className="relative z-10">
         <ModernNavbar />
-        <main className="pt-10 pb-32">
+        <main className="pt-24 md:pt-28 pb-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <section
             id="home"
-            className="w-full flex flex-col md:flex-row items-center justify-center gap-10 mb-20"
+            className="w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10 mb-16 sm:mb-24"
           >
             <div className="flex-1 flex flex-col gap-6 max-w-lg justify-center items-center">
               <div className="flex justify-center items-center w-full">
@@ -81,10 +82,10 @@ export default function Portfolio() {
                   imageSrc={PROFILE_IMAGE}
                   altText="Profile"
                   captionText="That's me!"
-                  imageHeight="180px"
-                  imageWidth="180px"
-                  containerHeight="220px"
-                  containerWidth="220px"
+                  imageHeight="min(50vw, 180px)"
+                  imageWidth="min(50vw, 180px)"
+                  containerHeight="min(60vw, 220px)"
+                  containerWidth="min(60vw, 220px)"
                   scaleOnHover={1.08}
                   displayOverlayContent={true}
                 />
@@ -134,8 +135,8 @@ export default function Portfolio() {
               <div className="p-4   ">
                 <ModelViewer
                   modelUrl="/models/me.glb"
-                  height="500px"
-                  scale={1.7}
+                  height="60vh"
+                  scale={1.6}
                   autoRotate
                   autoRotateSpeed={2.7}
                   cameraPosition={[0, 2, 6]}
@@ -144,8 +145,7 @@ export default function Portfolio() {
               </div>
             </div>
           </section>
-          
-         
+          </div>
         </main>
       </div>
     </div>
