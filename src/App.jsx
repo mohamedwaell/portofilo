@@ -73,8 +73,8 @@ export default function Portfolio() {
         <main className="pt-24 md:pt-28 pb-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Hero />
-          {/* <About />
-          <Contact /> */}
+          {/* <About />*/}
+          <Contact /> 
          
           </div>
         </main>
