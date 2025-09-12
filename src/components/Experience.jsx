@@ -29,6 +29,16 @@ const TIMELINE = [
       "Built small practice projects to apply web development concepts.",
     ],
   },
+  {
+    role: "Freelance Developer",
+    company: "",
+    period: "2025",
+    points: [
+      "Worked on freelance projects delivering custom web solutions for clients.",
+      "Built responsive websites and web applications using modern frameworks.",
+      "Collaborated with clients to gather requirements and deliver tailored solutions.",
+    ],
+  },
 ];
 
 export default function Experience() {
