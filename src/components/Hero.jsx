@@ -3,7 +3,7 @@ import TextType from "./TextType.jsx";
 import TiltedCard from "./TiltedCard.jsx";
 import ModelViewer from "./ModelViewer.jsx";
 const PROFILE_IMAGE = "./porfile.jpg";
-const CV_URL = "./Cv.pdf";
+const CV_URL = "/Cv.pdf";
 const Hero = () => {
   return (
     <section

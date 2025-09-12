@@ -2,21 +2,31 @@ import React from "react";
 
 const TIMELINE = [
   {
-    role: "Frontend Developer",
-    company: "Freelance",
-    period: "2023 — Present",
+    role: "MERN Stack Intern",
+    company: "ITI",
+    period: "2025",
     points: [
-      "Built performant React apps with modern UI and motion.",
-      "Delivered responsive, accessible interfaces for clients.",
+      "Learning full-stack development with MongoDB, Express.js, React, and Node.js.",
+      "Building end-to-end web applications with modern JavaScript technologies.",
+      "Implementing RESTful APIs and database integration.",
     ],
   },
   {
-    role: "Student Projects",
-    company: "Computer Engineering",
-    period: "2022 — 2023",
+    role: "Python Intern",
+    company: "ITI",
+    period: "2025",
     points: [
-      "Collaborated on full‑stack apps and REST APIs.",
-      "Practiced clean code, git flow, and code reviews.",
+      "Learned the basics of Python programming, including Object-Oriented Programming (OOP) and Data Structures.",
+      "Gained experience with data manipulation techniques and Python best practices.",
+    ],
+  },
+  {
+    role: "Web Intern",
+    company: "NTI",
+    period: "2025",
+    points: [
+      "Learned HTML, CSS, and JavaScript fundamentals.",
+      "Built small practice projects to apply web development concepts.",
     ],
   },
 ];
