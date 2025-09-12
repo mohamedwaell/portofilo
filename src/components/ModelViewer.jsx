@@ -1,6 +1,6 @@
 import React, { Suspense, useRef, useEffect, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, useGLTF, Preload } from '@react-three/drei'
+import { OrbitControls, useGLTF, Preload, Html } from '@react-three/drei'
 
 // ModelLoader component
 function Model({ url, scale = 1, rotation = [0, 0, 0], castShadow = true, receiveShadow = true, autoRotateSpeed = 0.5 }) {
@@ -31,7 +31,6 @@ function Model({ url, scale = 1, rotation = [0, 0, 0], castShadow = true, receiv
     />
   )
 }
-
 
 function Loader() {
   return (
@@ -71,15 +70,15 @@ export default function ModelViewer({
     )
   }
 
-  const computedHeight = isMobile ? '50vh' : height
-  const computedScale = isMobile ? scale * 0.9 : scale
+  const computedHeight = isMobile ? '48vh' : height
+  const computedScale = isMobile ? Math.max(0.75, scale * 0.85) : scale
 
   return (
-    <div className="model-viewer-wrapper" style={{ width, height: computedHeight, position: 'relative' }}>
+    <div className="model-viewer-wrapper" style={{ width: '100%', height: computedHeight, position: 'relative' }}>
       <Canvas
         shadows
         camera={{ position: cameraPosition, fov: 45 }}
-        dpr={[1, 2]}
+        dpr={isMobile ? [1, 1.5] : [1, 2]}
         gl={{ antialias: !isMobile, powerPreference: 'high-performance' }}
         frameloop={autoRotate ? 'always' : 'demand'}
         style={{ background }}
@@ -89,7 +88,7 @@ export default function ModelViewer({
         <directionalLight position={[5, 10, 7]} intensity={0.8} castShadow />
         <hemisphereLight skyColor={'#ffffff'} groundColor={'#444444'} intensity={0.3} />
 
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loader />}>
           <group position={[0, -0.9, 0]}>
             <Model
               url={modelUrl}
@@ -112,7 +111,7 @@ export default function ModelViewer({
         <OrbitControls
           enablePan={!isMobile}
           enableZoom={!isMobile}
-          enableRotate={!isMobile} // 🔹 disables rotation on mobile
+          enableRotate={!isMobile}
           makeDefault
           {...controls}
         />

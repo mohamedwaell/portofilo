@@ -13,13 +13,13 @@ export default function ModernNavbar({ items = NAV_ITEMS }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full py-4 bg-black/80 fixed top-0 left-0 z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
+    <nav className="w-full py-3 sm:py-4 bg-black/80 backdrop-blur supports-[backdrop-filter]:bg-black/60 fixed top-0 left-0 z-50">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6">
         {/* Logo / Brand */}
         <div className="text-2xl font-bold text-[#a47cf3]">Mohamed Wael</div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex justify-center gap-8">
+        <ul className="hidden md:flex justify-center gap-6 lg:gap-8">
           {items.map((item) => (
             <li key={item.href}>
               <a
@@ -42,7 +42,7 @@ export default function ModernNavbar({ items = NAV_ITEMS }) {
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden text-white text-2xl"
+          className="md:hidden text-white text-2xl px-2 py-1"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? "✖" : "☰"}
@@ -51,7 +51,7 @@ export default function ModernNavbar({ items = NAV_ITEMS }) {
 
       {/* Mobile Dropdown */}
       {menuOpen && (
-        <ul className="flex flex-col items-center gap-6 py-6 bg-black/90 md:hidden">
+        <ul className="flex flex-col items-center gap-5 py-5 px-4 bg-black/90 md:hidden">
           {items.map((item) => (
             <li key={item.href}>
               <a
@@ -60,7 +60,7 @@ export default function ModernNavbar({ items = NAV_ITEMS }) {
                 ${
                   active === item.href
                     ? "text-[#a47cf3]"
-                    : "text-white/80 hover:text-white"
+                    : "text-white/90 hover:text-white"
                 }`}
                 onClick={() => {
                   setActive(item.href);

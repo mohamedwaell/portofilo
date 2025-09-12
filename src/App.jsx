@@ -5,8 +5,19 @@ import Particles from "./components/Particles.jsx";
 import WhatsAppButton from "./components/WhatsAppButton.jsx";
 import Hero from "./components/Hero.jsx";
 import About from "./components/About.jsx";
+import Experience from "./components/Experience.jsx";
 import Contact from "./components/Contact.jsx";
+import Footer from "./components/Footer.jsx";
+import LogoLoop from './components/LogoLoop';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 
+const techLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+  
+];
 
 
 
@@ -42,16 +53,15 @@ export default function Portfolio() {
       >
         <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-opacity-50" />
       </div>
-    <div className="relative min-h-screen bg-[#060010] text-white font-sans">
+    <div className="relative min-h-screen bg-[#060010] text-white font-sans overflow-x-hidden">
       <TargetCursor targetSelector=".cursor-target" />
       <WhatsAppButton />
       <div
         style={{
-          width: "100vw",
-          height: "100vh",
           position: "fixed",
-          top: 0,
-          left: 0,
+          inset: 0,
+          width: "100%",
+          height: "100%",
           zIndex: 0,
           pointerEvents: "none",
         }}
@@ -73,8 +83,24 @@ export default function Portfolio() {
         <main className="pt-24 md:pt-28 pb-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Hero />
-          {/* <About />*/}
-          <Contact /> 
+           <div style={{ height: '300px', position: 'relative', overflow: 'hidden'}}>
+      <LogoLoop
+        logos={techLogos}
+        speed={120}
+        direction="left"
+        logoHeight={70}
+        gap={40}
+        pauseOnHover={false}
+        scaleOnHover
+        fadeOut
+        // fadeOutColor="#ffffff"
+        ariaLabel="Technology partners"
+      />
+    </div>
+          {/* <About /> */}
+          <Experience />
+          <Contact />
+          <Footer />
          
           </div>
         </main>

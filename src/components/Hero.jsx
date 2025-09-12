@@ -65,12 +65,12 @@ const Hero = () => {
       </div>
     </div>
 
-    <div className="flex-1 flex items-center justify-center max-w-lg">
-      <div className="p-4   ">
+    <div className="flex-1 flex items-center justify-center max-w-xl md:max-w-lg w-full px-4 md:px-0">
+      <div className="p-2 sm:p-4 w-full">
         <ModelViewer
           modelUrl="/models/me.glb"
-          height="60vh"
-          scale={1.6}
+          height="56vh"
+          scale={1.5}
           autoRotate
           autoRotateSpeed={2.7}
           cameraPosition={[0, 2, 6]}

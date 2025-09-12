@@ -3,6 +3,21 @@
     scroll-behavior: smooth;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+
+html, body {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;    
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;           
+}
+
   @font-face {
     font-family: "zentry";
     src: url("/fonts/zentry-regular.woff2") format("woff2");
