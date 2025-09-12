@@ -9,13 +9,28 @@ import Experience from "./components/Experience.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import LogoLoop from './components/LogoLoop';
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
+import { 
+  SiReact, 
+  SiNextdotjs, 
+  SiTypescript, 
+  SiTailwindcss,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
+  SiBootstrap,
+  
+  
+} from 'react-icons/si';
 
 const techLogos = [
+  { node: <SiHtml5 />, title: "HTML5", href: "https://www.html.com" },
+  { node: <SiCss3 />, title: "CSS3", href: "https://www.css.com" },
+  { node: <SiJavascript />, title: "JavaScript", href: "https://www.javascript.com" },
   { node: <SiReact />, title: "React", href: "https://react.dev" },
   { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
   { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
   { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+  { node: <SiBootstrap />, title: "Bootstrap", href: "https://getbootstrap.com" },
   
 ];
 
@@ -83,10 +98,10 @@ export default function Portfolio() {
         <main className="pt-24 md:pt-28 pb-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Hero />
-           <div style={{ height: '300px', position: 'relative', overflow: 'hidden'}}>
+           <div style={{ height: '250px', position: 'relative', overflow: 'hidden'}}>
       <LogoLoop
         logos={techLogos}
-        speed={120}
+        speed={80}
         direction="left"
         logoHeight={70}
         gap={40}
