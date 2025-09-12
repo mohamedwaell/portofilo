@@ -5,7 +5,7 @@ import React from "react";
 const About = () => {
   return (
     <section id="about" className="w-full mb-16 sm:mb-24">
-      <div className="relative max-w-6xl mx-auto">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute -top-16 -left-10 h-56 w-56 rounded-full bg-purple-700/30 blur-3xl" />
           <div className="absolute bottom-0 -right-10 h-56 w-56 rounded-full bg-indigo-500/20 blur-3xl" />
@@ -34,8 +34,8 @@ const About = () => {
           </span>
         </div>
 
-        <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-6 md:p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
             <div>
               <h3 className="text-xl md:text-2xl font-semibold">Hi, I’m Mohamed</h3>
               <p className="mt-3 text-white/80 leading-relaxed">
@@ -63,21 +63,7 @@ const About = () => {
                 </li>
               </ul>
 
-              <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                <a
-                  href="#contact"
-                  className="px-5 py-3 bg-purple-700 hover:bg-purple-600 text-white font-medium rounded-lg transition-all text-center cursor-target"
-                >
-                  Get in touch
-                </a>
-                <a
-                  href="/Cv.pdf"
-                  download
-                  className="px-5 py-3 border-2 border-purple-500 text-purple-300 hover:bg-purple-900/30 hover:text-white font-medium rounded-lg transition-all text-center cursor-target"
-                >
-                  View CV
-                </a>
-              </div>
+             
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -121,18 +107,18 @@ const About = () => {
           </div>
         </div>
 
-        <div className="mt-6 grid grid-cols-3 gap-3 text-center">
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-center">
           <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-            <div className="text-2xl font-bold">3+</div>
-            <div className="text-xs text-white/70 mt-1">Years Coding</div>
+            <div className="text-xl sm:text-2xl font-bold">3+</div>
+            <div className="text-xs sm:text-sm text-white/70 mt-1">Years Coding</div>
           </div>
           <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-            <div className="text-2xl font-bold">15+</div>
-            <div className="text-xs text-white/70 mt-1">Projects</div>
+            <div className="text-xl sm:text-2xl font-bold">15+</div>
+            <div className="text-xs sm:text-sm text-white/70 mt-1">Projects</div>
           </div>
           <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-            <div className="text-2xl font-bold">100%</div>
-            <div className="text-xs text-white/70 mt-1">User‑Focused</div>
+            <div className="text-xl sm:text-2xl font-bold">100%</div>
+            <div className="text-xs sm:text-sm text-white/70 mt-1">User‑Focused</div>
           </div>
         </div>
       </div>
