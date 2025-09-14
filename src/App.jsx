@@ -112,7 +112,7 @@ export default function Portfolio() {
         ariaLabel="Technology partners"
       />
     </div>
-          <About />
+{/*           <About /> */}
           <Experience />
           <Contact />
           <Footer />
