@@ -9,6 +9,7 @@ import Experience from "./components/Experience.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import LogoLoop from './components/LogoLoop';
+
 import { 
   SiReact, 
   SiNextdotjs, 
@@ -112,7 +113,7 @@ export default function Portfolio() {
         ariaLabel="Technology partners"
       />
     </div>
-{/*           <About /> */}
+          {/* <About /> */}
           <Experience />
           <Contact />
           <Footer />
