@@ -6,6 +6,8 @@ import WhatsAppButton from "./components/WhatsAppButton.jsx";
 import Hero from "./components/Hero.jsx";
 import About from "./components/About.jsx";
 import Experience from "./components/Experience.jsx";
+
+import Projects from "./components/Projects.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import LogoLoop from './components/LogoLoop';
@@ -113,8 +115,11 @@ export default function Portfolio() {
         ariaLabel="Technology partners"
       />
     </div>
-          {/* <About /> */}
+         
+          <About />
           <Experience />
+         
+          <Projects />
           <Contact />
           <Footer />
          
