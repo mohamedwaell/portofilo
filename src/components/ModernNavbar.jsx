@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-
-const NAV_ITEMS = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
-];
+import { NAV_ITEMS } from "../consts";
 
 export default function ModernNavbar({ items = NAV_ITEMS }) {
   const [active, setActive] = useState(items[0].href);

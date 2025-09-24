@@ -1,43 +1,17 @@
-import React, { useState } from 'react'
-const GITHUB_URL = "https://github.com/mohamedwaell";
-const LINKEDIN_URL = "https://www.linkedin.com/in/mohamed-wael-9639bb344/";
-const EMAIL_ADDRESS = "mhamedwaell22@gmail.com";
+import React from 'react'
+import { useForm } from 'react-hook-form'
+import { GITHUB_URL, LINKEDIN_URL, EMAIL_ADDRESS } from "../consts";
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
-  const [status, setStatus] = useState({ type: '', message: '' })
+  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm({
+    defaultValues: { name: '', email: '', message: '' }
+  })
 
-  function handleChange(e) {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
-
-  function validateEmail(email) {
-    return /[^\s@]+@[^\s@]+\.[^\s@]+/.test(email)
-  }
-
-  async function handleSubmit(e) {
-    e.preventDefault()
-    setStatus({ type: '', message: '' })
-    const { name, email, message } = formData
-    if (!name || !email || !message) {
-      setStatus({ type: 'error', message: 'Please fill out all fields.' })
-      return
-    }
-    if (!validateEmail(email)) {
-      setStatus({ type: 'error', message: 'Please enter a valid email address.' })
-      return
-    }
-
-    try {
-      // Placeholder: open default mail client with prefilled content
-      const subject = encodeURIComponent(`New message from ${name}`)
-      const body = encodeURIComponent(`${message}\n\nFrom: ${name} <${email}>`)
-      window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${subject}&body=${body}`
-      setStatus({ type: 'success', message: 'Opening your email client to send the message…' })
-      setFormData({ name: '', email: '', message: '' })
-    } catch (err) {
-      setStatus({ type: 'error', message: 'Something went wrong. Please try again.' })
-    }
+  function onSubmit(values) {
+    const { name, email, message } = values
+    const subject = encodeURIComponent(`New message from ${name}`)
+    const body = encodeURIComponent(`${message}\n\nFrom: ${name} <${email}>`)
+    window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${subject}&body=${body}`
+    reset()
   }
 
   return (
@@ -91,7 +65,7 @@ const Contact = () => {
 
           {/* Right: form */}
           <div className="text-left">
-            <form onSubmit={handleSubmit} className="rounded-3xl border border-white/10 bg-white text-gray-900 shadow-xl p-6 md:p-8">
+            <form onSubmit={handleSubmit(onSubmit)} className="rounded-3xl border border-white/10 bg-white text-gray-900 shadow-xl p-6 md:p-8">
               <div className="grid grid-cols-1 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm text-gray-600">Your Name</label>
@@ -99,12 +73,12 @@ const Contact = () => {
                     id="name"
                     name="name"
                     type="text"
-                    value={formData.name}
-                    onChange={handleChange}
+                    {...register('name', { required: 'Your name is required' })}
                     placeholder="Your name"
                     className="mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 py-4 text-gray-900 placeholder:text-gray-400 outline-none focus:border-slate-500"
                     required
                   />
+                  {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>}
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm text-gray-600">Your Email</label>
@@ -112,12 +86,15 @@ const Contact = () => {
                     id="email"
                     name="email"
                     type="email"
-                    value={formData.email}
-                    onChange={handleChange}
+                    {...register('email', {
+                      required: 'Email is required',
+                      pattern: { value: /[^\s@]+@[^\s@]+\.[^\s@]+/, message: 'Enter a valid email' }
+                    })}
                     placeholder="you@example.com"
                     className="mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 py-4 text-gray-900 placeholder:text-gray-400 outline-none focus:border-slate-500"
                     required
                   />
+                  {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
                 </div>
               </div>
               <div className="mt-4">
@@ -126,20 +103,15 @@ const Contact = () => {
                   id="message"
                   name="message"
                   rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
+                  {...register('message', { required: 'Please enter a message', minLength: { value: 10, message: 'Please write at least 10 characters' } })}
                   placeholder="Tell me a bit about your project…"
                   className="mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 py-4 text-gray-900 placeholder:text-gray-400 outline-none focus:border-slate-500 min-h-40"
                   required
                 />
+                {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>}
               </div>
-              {status.message && (
-                <p className={`mt-4 text-sm ${status.type === 'error' ? 'text-red-600' : 'text-green-600'}`}>
-                  {status.message}
-                </p>
-              )}
               <div className="mt-6">
-                <button type="submit" className="px-6 py-4 bg-[#a47cf3] hover:bg-purple-600 text-white font-semibold rounded-xl transition-all cursor-target w-full">
+                <button disabled={isSubmitting} type="submit" className="px-6 py-4 bg-[#a47cf3] hover:bg-purple-600 disabled:opacity-70 text-white font-semibold rounded-xl transition-all cursor-target w-full">
                   Send Message
                 </button>
               </div>

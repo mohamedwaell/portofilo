@@ -118,11 +118,10 @@ export default function Portfolio() {
          
           <About />
           <Experience />
-         
           <Projects />
           <Contact />
           <Footer />
-         
+
           </div>
         </main>
       </div>

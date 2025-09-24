@@ -49,6 +49,8 @@ function AnimatedCounter({ target, duration = 2000 }) {
   );
 }
 
+import { ABOUT_SKILLS } from "../consts";
+
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -112,20 +114,7 @@ const About = () => {
                 <span className="text-[#a47cf3]">◆</span> Skills
               </h3>
               <div className="flex flex-wrap gap-2">
-                {[
-                  "HTML5",
-                  "CSS3",
-                  "JavaScript",
-                  "TypeScript",
-                  "React",
-                  "Node.js",
-                  "Express",
-                  "MongoDB",
-                  "PostgreSQL",
-                  "Tailwind CSS",
-                  "Framer Motion",
-                  "Git / GitHub"
-                ].map((skill) => (
+                {ABOUT_SKILLS.map((skill) => (
                   <span
                     key={skill}
                     className="text-sm px-3 py-1 rounded-full border border-white/10 bg-white/5 text-white/80 hover:bg-white/10 hover:text-white transition-colors"

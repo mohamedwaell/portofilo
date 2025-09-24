@@ -2,8 +2,7 @@ import React from 'react'
 import TextType from "./TextType.jsx";
 import TiltedCard from "./TiltedCard.jsx";
 import ModelViewer from "./ModelViewer.jsx";
-const PROFILE_IMAGE = "./porfile.jpg";
-const CV_URL = "/Cv.pdf";
+import { PROFILE_IMAGE, CV_URL, HERO_TYPING_TEXTS, HERO_TEXT_COLORS } from "../consts";
 const Hero = () => {
   return (
     <section
@@ -29,16 +28,12 @@ const Hero = () => {
       </p>
 
       <TextType
-        text={[
-          "I'm a Frontend & Creative Developer.",
-          "I build cool things with JS & 3D.",
-          "Let's make something awesome!",
-        ]}
+        text={HERO_TYPING_TEXTS}
         as="h1"
         className="text-3xl font-bold text-center mt-2"
         typingSpeed={60}
         pauseDuration={1200}
-        textColors={["#fff", "#a47cf3", "#f2d479"]}
+        textColors={HERO_TEXT_COLORS}
         showCursor={true}
         cursorCharacter="_"
       />

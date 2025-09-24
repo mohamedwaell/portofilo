@@ -1,32 +1,6 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-
-const PROJECTS = [
-  {
-    title: "Dr. Ahmed Gad – Fitness Trainer",
-    description: "Landing website for a personal gym trainer with strong CTA and Arabic UI.",
-    image: "/drahmed.jpg",
-    tech: ["React", "Tailwind", "Vite"],
-    link: "https://www.dr-ahmed-gad.com/",
-    repo: "https://github.com/HEMA-HEMDAN/drAhmed"
-  },
-  {
-    title: "Portfolio Website",
-    description: "3D interactions, particles, and smooth scroll built with React and Vite.",
-    image: "/portofilo.png",
-    tech: ["React", "Vite", "Tailwind"],
-    link: "/",
-    repo: "/"
-  },
-  {
-    title: "Tic tac toe js",
-    description: "tic tac toe game with javascript",
-    image: "/tic.png",
-    tech: ["javascript", "html", "css"],
-    link: "https://mohamedwaell.github.io/tic-tac-toe-js/",
-    repo: "https://github.com/mohamedwaell/tic-tac-toe-js"
-  },
-];
+import { PROJECTS } from "../consts";
 
 export default function Projects() {
   return (
