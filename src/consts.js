@@ -27,7 +27,7 @@ export const PROJECTS = [
   {
     title: "Portfolio Website",
     description: "3D interactions, particles, and smooth scroll built with React and Vite.",
-    image: "/portofilo.png",
+    image: "/portofilo.jpg",
     tech: ["React", "Vite", "Tailwind"],
     link: "/",
     repo: "https://github.com/mohamedwaell/portofilo",
@@ -35,7 +35,7 @@ export const PROJECTS = [
   {
     title: "journey through the egyptain history",
     description: "3D interactions, particles, and smooth scroll built with React and Vite.",
-    image: "/journey.png",
+    image: "/journey.jpg",
     tech: ["React", "Vite", "Tailwind"],
     link: "https://www.linkedin.com/posts/mohamed-wael-9639bb344_react-tailwindcss-frontend-activity-7375599035933442048-rERf?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFZKNpsBxUPVXnCm9vd1gZiTo-PIB75IikU",
     repo: "/",

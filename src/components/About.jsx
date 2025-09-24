@@ -134,7 +134,7 @@ const About = () => {
           >
             <div className="w-full">
               <img
-                src="/about.png"
+                src="/about.jpg"
                 alt="About"
                 className="w-full h-auto rounded-2xl border border-white/10 shadow-xl object-cover"
                 loading="lazy"
