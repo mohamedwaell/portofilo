@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import GlareHover from "./GlareHover";
 
 // Animated counter component
 function AnimatedCounter({ target, duration = 2000 }) {
@@ -71,20 +70,7 @@ const About = () => {
     return () => observer.disconnect();
   }, []);
 
-  const skillsCategories = [
-    {
-      title: "Frontend",
-      skills: [
-        { name: "HTML5", icon: "fab fa-html5" },
-        { name: "CSS3", icon: "fab fa-css3-alt" },
-        { name: "JavaScript", icon: "fab fa-js-square" },
-        { name: "Bootstrap", icon: "fa-brands fa-bootstrap" },
-        { name: "Tailwind", icon: "tailwind-icon" },
-        { name: "React", icon: "fab fa-react" },
-      ],
-    },
-  ];
-
+  
   return (
     <section ref={sectionRef} id="about" className="w-full mb-16 sm:mb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -110,26 +96,64 @@ const About = () => {
           >
             <div className="space-y-4">
               <p className="text-lg text-white/80 leading-relaxed">
-                I'm a passionate{" "}
-                <span className="text-[#a47cf3] font-semibold">
-                  full-stack developer
-                </span>{" "}
-                who loves creating digital experiences that blend creativity
-                with cutting-edge technology.
+                I'm a <span className="text-[#a47cf3] font-semibold">full‑stack developer</span> focused on building fast, accessible, and delightful web experiences. I love turning complex problems into simple, scalable solutions with clean code and thoughtful design.
               </p>
               <p className="text-lg text-white/80 leading-relaxed">
-                With expertise in modern web technologies, I specialize in
-                building scalable applications that not only function flawlessly
-                but also provide exceptional user experiences.
+                Over the past years I’ve worked across freelance projects and startup teams, shipping production‑ready features end‑to‑end — from architecture and APIs to pixel‑perfect interfaces. My toolkit centers on modern JavaScript, type‑safety, performance, and a great developer experience.
               </p>
               <p className="text-lg text-white/80 leading-relaxed">
-                When I'm not coding, you'll find me exploring new frameworks,
-                contributing to open-source projects, or experimenting with the
-                latest design trends.
+                When I’m not building, I’m learning — contributing to open source, exploring new frameworks, and polishing small details that make products feel inspiring to use.
               </p>
+            </div>
+
+            {/* Skills */}
+            <div className="pt-4">
+              <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
+                <span className="text-[#a47cf3]">◆</span> Skills
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "HTML5",
+                  "CSS3",
+                  "JavaScript",
+                  "TypeScript",
+                  "React",
+                  "Node.js",
+                  "Express",
+                  "MongoDB",
+                  "PostgreSQL",
+                  "Tailwind CSS",
+                  "Framer Motion",
+                  "Git / GitHub"
+                ].map((skill) => (
+                  <span
+                    key={skill}
+                    className="text-sm px-3 py-1 rounded-full border border-white/10 bg-white/5 text-white/80 hover:bg-white/10 hover:text-white transition-colors"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Right: About Image */}
+          <div
+            className={`transition-all duration-700 delay-200 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <div className="w-full">
+              <img
+                src="/about.png"
+                alt="About"
+                className="w-full h-auto rounded-2xl border border-white/10 shadow-xl object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
+       
 
         {/* Centered Stats Section */}
         <div
