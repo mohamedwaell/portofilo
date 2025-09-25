@@ -6,7 +6,7 @@ import WhatsAppButton from "./components/WhatsAppButton.jsx";
 import Hero from "./components/Hero.jsx";
 import About from "./components/About.jsx";
 import Experience from "./components/Experience.jsx";
-
+// import ScrollToTop from "./components/ScrollToTop.jsx";
 import Projects from "./components/Projects.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
@@ -62,6 +62,7 @@ export default function Portfolio() {
 
   return (
     <>
+    
      <div
         className={`fixed top-0 left-0 w-full h-full z-50 flex items-center justify-center bg-white dark:bg-black transition-opacity duration-700 ${
           loading
