@@ -6,6 +6,7 @@
 html, body {
   overflow-x: hidden;
   width: 100%;
+  
 }
 
 
@@ -60,3 +61,4 @@ body::-webkit-scrollbar {
 
 
 
+/* (Reverted) removed glow and timeline custom styles */

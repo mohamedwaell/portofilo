@@ -8,9 +8,11 @@ import About from "./components/About.jsx";
 import Experience from "./components/Experience.jsx";
 // import ScrollToTop from "./components/ScrollToTop.jsx";
 import Projects from "./components/Projects.jsx";
+import Testimonials from "./components/Testimonials.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import LogoLoop from './components/LogoLoop';
+import TechStack from './components/TechStack.jsx';
 
 import { 
   SiReact, 
@@ -72,7 +74,7 @@ export default function Portfolio() {
       >
         <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-opacity-50" />
       </div>
-    <div className="relative min-h-screen bg-[#060010] text-white font-sans overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#11111b] text-white font-sans overflow-x-hidden">
       <TargetCursor targetSelector=".cursor-target" />
       <WhatsAppButton />
       <div
@@ -112,13 +114,16 @@ export default function Portfolio() {
         pauseOnHover={false}
         scaleOnHover
         fadeOut
-        // fadeOutColor="#ffffff"
+        fadeOutColor="#11111b"
         ariaLabel="Technology partners"
       />
     </div>
+    
          
           <About />
+          <TechStack />
           <Experience />
+          <Testimonials />
           <Projects />
           <Contact />
           <Footer />

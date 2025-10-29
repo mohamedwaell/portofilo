@@ -74,50 +74,43 @@ const About = () => {
 
   
   return (
-    <section ref={sectionRef} id="about" className="w-full mb-16 sm:mb-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Clean Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold hero-heading">
-            About Me
-          </h2>
-          <p className="mt-3 text-white/70 text-center max-w-2xl mx-auto">
-            Get to know me better and my journey in tech.
-          </p>
+    <section ref={sectionRef} id="about" className="w-full min-h-screen flex items-center py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        {/* Section Title with line */}
+        <div className="mb-12">
+         
+          <h2 className="text-3xl md:text-4xl font-bold hero-heading text-center">About Me</h2>
+          
+          
         </div>
 
-        {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        {/* Main Content - Compact Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left: Text Content */}
           <div
-            className={`space-y-6 transition-all duration-700 ${
+            className={`space-y-4 transition-all duration-700 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="space-y-4">
-              <p className="text-lg text-white/80 leading-relaxed">
-                I'm a <span className="text-[#a47cf3] font-semibold">full‑stack developer</span> focused on building fast, accessible, and delightful web experiences. I love turning complex problems into simple, scalable solutions with clean code and thoughtful design.
-              </p>
-              <p className="text-lg text-white/80 leading-relaxed">
-                Over the past years I’ve worked across freelance projects and startup teams, shipping production‑ready features end‑to‑end — from architecture and APIs to pixel‑perfect interfaces. My toolkit centers on modern JavaScript, type‑safety, performance, and a great developer experience.
-              </p>
-              <p className="text-lg text-white/80 leading-relaxed">
-                When I’m not building, I’m learning — contributing to open source, exploring new frameworks, and polishing small details that make products feel inspiring to use.
-              </p>
-            </div>
-
-            {/* Skills */}
-            <div className="pt-4">
-              <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
-                <span className="text-[#a47cf3]">◆</span> Skills
-              </h3>
+            <p className="text-base text-white/80 leading-relaxed">
+              I'm a <span className="text-[#a47cf3] font-semibold">Full Stack Developer</span> and software engineer passionate about building digital solutions. My journey spans from backend systems to user experiences.
+            </p>
+            <p className="text-base text-white/80 leading-relaxed">
+              I discovered my love for development through ERP systems and interactive applications. I focus on clean code, problem-solving, scalable design, and user-first thinking.
+            </p>
+            <p className="text-base text-white/80 leading-relaxed">
+              Currently, I'm focused on creating full-stack web applications from scratch, combining backend logic with intuitive frontend design, and transforming ideas into functional browser tools.
+            </p>
+            
+            {/* Skills - Compact */}
+            <div className="pt-2">
               <div className="flex flex-wrap gap-2">
-                {ABOUT_SKILLS.map((skill) => (
+                {ABOUT_SKILLS.slice(0, 6).map((skill) => (
                   <span
                     key={skill}
-                    className="text-sm px-3 py-1 rounded-full border border-white/10 bg-white/5 text-white/80 hover:bg-white/10 hover:text-white transition-colors"
+                    className="text-xs px-2 py-1 rounded-full border border-white/10 bg-white/5 text-white/70"
                   >
                     {skill}
                   </span>
@@ -132,44 +125,13 @@ const About = () => {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="w-full">
+            <div className="w-full max-w-md mx-auto">
               <img
-                src="/about.jpg"
+                src="/about.webp"
                 alt="About"
-                className="w-full h-auto rounded-2xl border border-white/10 shadow-xl object-cover"
+                className="w-full h-auto  object-cover"
                 loading="lazy"
               />
-            </div>
-          </div>
-        </div>
-       
-
-        {/* Centered Stats Section */}
-        <div
-          className={`mt-16 transition-all duration-700 delay-400 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
-              <AnimatedCounter target={1} />
-              <div className="text-lg text-white/70 font-medium">
-                Years Experience
-              </div>
-            </div>
-            <div className="text-center p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
-              <AnimatedCounter target={15} />
-              <div className="text-lg text-white/70 font-medium">
-                Projects Completed
-              </div>
-            </div>
-            <div className="text-center p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
-              <div className="text-5xl md:text-6xl font-bold text-[#a47cf3] mb-2">
-                ∞
-              </div>
-              <div className="text-lg text-white/70 font-medium">
-                Passion for Code
-              </div>
             </div>
           </div>
         </div>

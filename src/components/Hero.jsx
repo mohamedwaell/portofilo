@@ -65,7 +65,7 @@ const Hero = () => {
         <ModelViewer
           modelUrl="/models/me.glb"
           height="56vh"
-          scale={1.5}
+          scale={1.6}
           autoRotate
           autoRotateSpeed={2.7}
           cameraPosition={[0, 2, 6]}
