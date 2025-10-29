@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Mohamed Wael</title>
+    <meta name="description" content="The page you're looking for doesn't exist. Return to Mohamed Wael's portfolio homepage.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://www.mo-wael.com/404" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="404 - Page Not Found | Mohamed Wael" />
+    <meta property="og:description" content="The page you're looking for doesn't exist." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.mo-wael.com/404" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/logo.png" />
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes glow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-glow {
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #a47cf3 0%, #f2d479 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gradient-border {
+            background: linear-gradient(135deg, #a47cf3 0%, #f2d479 100%);
+            padding: 2px;
+            border-radius: 0.75rem;
+        }
+        
+        .gradient-border-inner {
+            background: #11111b;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
+        
+        /* Particle effect background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(164, 124, 243, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(242, 212, 121, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(164, 124, 243, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(164, 124, 243, 0.3);
+            pointer-events: none;
+        }
+        
+        .particle:nth-child(1) {
+            width: 4px;
+            height: 4px;
+            left: 10%;
+            top: 20%;
+            animation: float 4s ease-in-out infinite;
+            animation-delay: 0s;
+        }
+        
+        .particle:nth-child(2) {
+            width: 6px;
+            height: 6px;
+            left: 80%;
+            top: 60%;
+            animation: float 5s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        
+        .particle:nth-child(3) {
+            width: 3px;
+            height: 3px;
+            left: 50%;
+            top: 80%;
+            animation: float 6s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+    </style>
+</head>
+<body class="bg-[#11111b] text-white font-sans overflow-x-hidden min-h-screen flex items-center justify-center">
+    <!-- Background particles -->
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    
+    <div class="content-wrapper w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- 404 Number -->
+        <div class="mb-8">
+            <h1 class="text-9xl md:text-[12rem] font-bold gradient-text animate-glow leading-none">
+                404
+            </h1>
+        </div>
+        
+        <!-- Animated 404 Illustration -->
+        <div class="mb-8 animate-float">
+            <svg width="200" height="200" viewBox="0 0 200 200" class="mx-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer circle -->
+                <circle cx="100" cy="100" r="90" stroke="url(#gradient1)" stroke-width="2" fill="none" opacity="0.3"/>
+                <!-- Inner broken circle -->
+                <path d="M 100 10 A 90 90 0 0 1 190 100" stroke="url(#gradient2)" stroke-width="3" fill="none" stroke-dasharray="10 5" opacity="0.6"/>
+                <path d="M 190 100 A 90 90 0 0 1 100 190" stroke="url(#gradient2)" stroke-width="3" fill="none" stroke-dasharray="10 5" opacity="0.6"/>
+                <!-- Central dot -->
+                <circle cx="100" cy="100" r="8" fill="#a47cf3"/>
+                <!-- Gradient definitions -->
+                <defs>
+                    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#a47cf3;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#f2d479;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#a47cf3;stop-opacity:0.8" />
+                        <stop offset="50%" style="stop-color:#f2d479;stop-opacity:0.8" />
+                        <stop offset="100%" style="stop-color:#a47cf3;stop-opacity:0.8" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        
+        <!-- Error Message -->
+        <div class="mb-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Oops! Page Not Found
+            </h2>
+            <p class="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
+                The page you're looking for seems to have wandered off into the digital void.
+                <br class="hidden sm:block" />
+                Don't worry, let's get you back on track!
+            </p>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <a 
+                href="/" 
+                class="gradient-border group"
+            >
+                <div class="gradient-border-inner flex items-center gap-2 transition-transform duration-300 group-hover:scale-105">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    <span class="gradient-text font-semibold">Back to Home</span>
+                </div>
+            </a>
+            
+            <a 
+                href="/#projects" 
+                class="px-6 py-3 border-2 border-white/20 rounded-xl text-white/80 hover:border-[#a47cf3] hover:text-[#a47cf3] transition-all duration-300 transform hover:scale-105"
+            >
+                View Projects
+            </a>
+            
+            <a 
+                href="/#contact" 
+                class="px-6 py-3 border-2 border-white/20 rounded-xl text-white/80 hover:border-[#f2d479] hover:text-[#f2d479] transition-all duration-300 transform hover:scale-105"
+            >
+                Get in Touch
+            </a>
+        </div>
+        
+        <!-- Helpful Links -->
+        <div class="text-white/50 text-sm">
+            <p>Maybe you were looking for:</p>
+            <div class="mt-4 flex flex-wrap justify-center gap-4">
+                <a href="/#about" class="hover:text-[#a47cf3] transition-colors">About</a>
+                <span class="text-white/30">•</span>
+                <a href="/#experience" class="hover:text-[#a47cf3] transition-colors">Experience</a>
+                <span class="text-white/30">•</span>
+                <a href="/#projects" class="hover:text-[#a47cf3] transition-colors">Projects</a>
+                <span class="text-white/30">•</span>
+                <a href="/#contact" class="hover:text-[#a47cf3] transition-colors">Contact</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Optional: Add some JavaScript for interactive effects -->
+    <script>
+        // Add mouse movement parallax effect
+        document.addEventListener('mousemove', (e) => {
+            const particles = document.querySelectorAll('.particle');
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            particles.forEach((particle, index) => {
+                const speed = (index + 1) * 0.5;
+                const x = (mouseX - 0.5) * 20 * speed;
+                const y = (mouseY - 0.5) * 20 * speed;
+                particle.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
+

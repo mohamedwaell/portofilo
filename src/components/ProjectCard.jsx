@@ -28,8 +28,9 @@ export default function ProjectCard({
         <div className={`relative ${imageHeightClass} w-full overflow-hidden bg-black/50`}>
           <img
             src={image}
-            alt={title}
+            alt={`${title} - ${description}`}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
           <div className="absolute top-3 left-3 text-xs text-white/90 bg-black/40 backdrop-blur px-2 py-1 rounded-full">

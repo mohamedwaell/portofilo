@@ -128,7 +128,7 @@ const About = () => {
             <div className="w-full max-w-md mx-auto">
               <img
                 src="/about.webp"
-                alt="About"
+                alt="Mohamed Wael - Full Stack Developer working on modern web applications"
                 className="w-full h-auto  object-cover"
                 loading="lazy"
               />

@@ -13,7 +13,7 @@ const Hero = () => {
       <div className="flex justify-center items-center w-full">
         <TiltedCard
           imageSrc={PROFILE_IMAGE}
-          altText="Profile"
+          altText="Mohamed Wael - Full Stack Developer Portfolio"
           captionText="That's me!"
           imageHeight="min(50vw, 180px)"
           imageWidth="min(50vw, 180px)"
