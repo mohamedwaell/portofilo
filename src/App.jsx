@@ -13,7 +13,7 @@ import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import LogoLoop from './components/LogoLoop';
 import TechStack from './components/TechStack.jsx';
-
+import Contacts from "./components/Contact2.jsx";
 import { 
   SiReact, 
   SiNextdotjs, 
@@ -101,7 +101,7 @@ export default function Portfolio() {
 
       <div className="relative z-10">
         <ModernNavbar />
-        <main className="pt-24 md:pt-28 pb-24">
+        <main className="pt-24 md:pt-28 ">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Hero />
            <div style={{ height: '250px', position: 'relative', overflow: 'hidden'}}>
@@ -125,10 +125,12 @@ export default function Portfolio() {
           <Experience />
           <Testimonials />
           <Projects />
-          <Contact />
+           </div>
+          <Contacts />
+          {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Footer />
 
-          </div>
+          </div> */}
         </main>
       </div>
     </div>
