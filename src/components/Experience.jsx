@@ -42,7 +42,7 @@ const TIMELINE = [
 
 export default function Page() {
   return (
-    <div className="min-h-screen  p-8">
+    <div id="experience" className="min-h-screen  p-8">
       <h2 className="text-3xl md:text-4xl font-bold hero-heading text-center">Experience</h2>
       <VerticalTimeline items={TIMELINE} align="alternate" />
     </div>
