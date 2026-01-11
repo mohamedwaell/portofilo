@@ -44,7 +44,18 @@ const techLogos = [
 export default function Portfolio() {
   const [loading, setLoading] = useState(true);
   const [visible, setVisible] = useState(true);
+const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
   useEffect(() => {
     const handleLoad = () => {
       setTimeout(() => {
@@ -125,12 +136,13 @@ export default function Portfolio() {
           <Experience />
           <Testimonials />
           <Projects />
+          {isMobile && <Contact />}
            </div>
-          <Contacts />
-          {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         {!isMobile && <Contacts />}
+          {isMobile &&( <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Footer />
 
-          </div> */}
+          </div> )}
         </main>
       </div>
     </div>
