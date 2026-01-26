@@ -1,12 +1,16 @@
 import React from "react";
 import { 
   SiHtml5, SiCss3, SiJavascript, SiTailwindcss,
-  SiReact
+  SiReact,SiNextdotjs
+
 } from 'react-icons/si';
 
 const items = [
+ { icon: <SiNextdotjs className="text-[#000000]" />, label: "Next.js" },
   { icon: <SiReact className="text-[#61dafb]" />, label: "React" },
+  {icon: <SiJavascript className="text-[#f7df1e]" />, label: "JavaScript" },
   { icon: <SiTailwindcss className="text-[#38bdf8]" />, label: "Tailwind" },
+  
   
   
  

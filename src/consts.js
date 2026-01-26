@@ -1,11 +1,11 @@
 // Centralized constants and data arrays
 
 export const ABOUT_SKILLS = [
-  "HTML5",
-  "CSS3",
+
   "JavaScript",
   "TypeScript",
   "React",
+      "Next.js",
   "Node.js",
   "Express",
   "MongoDB",
@@ -13,6 +13,7 @@ export const ABOUT_SKILLS = [
   "Tailwind CSS",
   "Framer Motion",
   "Git / GitHub",
+
 ];
 
 export const PROJECTS = [
@@ -29,8 +30,8 @@ export const PROJECTS = [
     description: "3D interactions, particles, and smooth scroll built with React and Vite.",
     image: "/journey.jpg",
     tech: ["React", "Vite", "Tailwind"],
-    link: "https://www.linkedin.com/posts/mohamed-wael-9639bb344_after-more-than-two-months-of-hard-work-activity-7328911378465898496-bHDI?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFZKNpsBxUPVXnCm9vd1gZiTo-PIB75IikU",
-    repo: "https://github.com/mohamedwaell/masr",
+    link: "https://masr.pages.dev",
+    repo: "/",
   },
   {
     title: "Over Dose Math",
@@ -38,6 +39,30 @@ export const PROJECTS = [
     image: "/math2.jpg",
     tech: ["React", "Vite", "Tailwind"],
     link: "https://overdosemath.com/",
+    repo: "/",
+  },
+  {
+    title: "wiz academy",
+    description: "3D interactions, particles, and smooth scroll built with React and Vite.",
+    image: "/wiz.png",
+    tech: ["React", "Vite", "Tailwind"],
+    link: "https://wiz-9oi.pages.dev/",
+    repo: "/",
+  },
+  {
+    title: "alkareem academy",
+    description: "3D interactions, particles, and smooth scroll built with React and Vite.",
+    image: "/alkareem.png",
+    tech: ["React", "Vite", "Tailwind"],
+    link: "https://www.alkareemacademy.com/",
+    repo: "https://github.com/mohamedwaell/quran",
+  },
+  {
+    title: "elmanasah",
+    description: "3D interactions, particles, and smooth scroll built with React and Vite.",
+    image: "/elmanasah.jpeg",
+    tech: ["React", "Vite", "Tailwind"],
+    link: "https://elmanasah.app",
     repo: "/",
   },
   {
